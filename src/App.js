@@ -3,10 +3,12 @@ import './App.css';
 function App() {
   return (
     <>
-    <nav>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
+    <nav className='navbar'>
+      <ul>
+      <li> <a href="/"> Home </a></li>
+      <li><a href="/"> Contact </a></li>
+      <li><a href="/"> About </a></li>
+      </ul>
     </nav>
     </>
   );
