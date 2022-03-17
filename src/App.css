@@ -39,6 +39,8 @@
 .navbar{
   background-color: rgb(79, 155, 221);
   border-radius: 15px;
+  margin: 5px 5px;
+  padding-bottom: 1px;
 }
 .navbar ul{
   overflow: auto;
