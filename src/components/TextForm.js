@@ -24,6 +24,7 @@ export default function TextForm(props) {
                 </div>
                 <button className="btn btn-primary mx-1" onClick={upClick}>Convert to uppercase</button>
                 <button className="btn btn-primary mx-1" onClick={loClick}>Convert to lowercase</button>
+                <button className="btn btn-primary mx-1" onClick={() => {navigator.clipboard.writeText(text)}}>Copy Text</button>
             </div>
             <div className="container my-4">
                 <h4>Your text Summary</h4>
