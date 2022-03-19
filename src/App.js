@@ -9,7 +9,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  // Link
 } from "react-router-dom";
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
     <>
     <Router>
 
-      <Navbar title="Hello Aj" about="About Aj" mode={mode} toggleModeDark={toggleModeDark} toggleModeLight={toggleModeLight} toggleModeGreen={toggleModeGreen} toggleModeYellow={toggleModeYellow} toggleModeRed={toggleModeRed}/>
+      <Navbar title="Aj's main app" about="About Aj" mode={mode} toggleModeDark={toggleModeDark} toggleModeLight={toggleModeLight} toggleModeGreen={toggleModeGreen} toggleModeYellow={toggleModeYellow} toggleModeRed={toggleModeRed}/>
       <Alert alert={alert}/>
       <div className="container my-3">
       <Switch>
