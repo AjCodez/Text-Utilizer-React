@@ -20,7 +20,7 @@ export default function TextForm(props) {
             <div>
                 <div className="mb-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                     <label htmlFor="myTextBox" className="form-label"><h4 style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>Text Area</h4></label>
-                    <textarea className="form-control" id="myTextBox" value={text} onChange={onChange} placeholder="Enter text here" style={{ color: props.mode === 'light' ? 'black' : 'white', background: props.mode === 'light' ? 'white' : '#b2a6a6' }} rows="6"></textarea>
+                    <textarea className="form-control" id="myTextBox" value={text} onChange={onChange} placeholder="Enter text here" style={{ color: props.mode === 'dark' ? 'white' : 'black', background: props.mode === 'dark' ? '#b2a6a6' : 'white' }} rows="6"></textarea>
                 </div>
                 <button className={`btn btn-${props.mode} mx-1`} onClick={upClick}>Convert to uppercase</button>
                 <button className={`btn btn-${props.mode} mx-1`} onClick={loClick}>Convert to lowercase</button>
@@ -28,7 +28,7 @@ export default function TextForm(props) {
             </div>
             <div className="container my-4" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h4>Your text Summary</h4>
-                <p>You have {text.length === 0 ? 0 : text.split(" ").length} words and {text.length} characters.</p>
+                <p>You have {text.length === 0 ? 0 : text.charAt(text.length-1)!==' '?text.split(" ").length:text.split(" ").length-1} words and {text.length} characters.</p>
                 <p>{0.008 * parseFloat(text.length === 0 ? 0 : text.split(" ").length)} Minutes to read.</p>
                 <p>
                     <button className="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
