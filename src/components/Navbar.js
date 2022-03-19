@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Navbar(props) {
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode==='dark'?'dark':'light'} bg-${props.mode}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="/">Navbar</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,12 +28,20 @@ export default function Navbar(props) {
               </ul>
             </li>
           </ul>
-          <div className={`form-check form-switch text-${props.mode==='dark'?'light':'dark'}`}>
-            <input className="form-check-input" type="checkbox" role="switch" onClick={props.toggleMode} id="flexSwitchCheckDefault" />
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+          <label className="form-check-label " >Change theme </label>
+          <div role="toolbar" aria-label="Toolbar with button groups" className={`btn-toolbar form-check form-switch text-${props.mode === 'dark' ? 'light' : props.mode}`}>
+            
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" className="btn btn-danger" onClick={props.toggleModeRed}>Red</button>
+                <button type="button" className="btn btn-warning" onClick={props.toggleModeYellow}>Yellow</button>
+                <button type="button" className="btn btn-success" onClick={props.toggleModeGreen}>Green</button>
+                <button type="button" className="btn btn-dark" onClick={props.toggleModeDark}>Dark</button>
+                <button type="button" className="btn btn-light" onClick={props.toggleModeLight}>White</button>
+              </div>
+              {/* <input className="form-check-input" type="checkbox" role="switch" onClick={props.toggleMode} id="flexSwitchCheckDefault" /> */}
+            </div>
           </div>
         </div>
-      </div>
     </nav>
   )
 }
