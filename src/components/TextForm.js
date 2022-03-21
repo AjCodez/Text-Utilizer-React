@@ -34,8 +34,8 @@ export default function TextForm(props) {
             </div>
             <div className="container my-4" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h4>Your text Summary</h4>
-                <p>You have {text.split(" ").filter((ele)=>{return ele.length!==0}).length} words and {text.length} characters.</p>
-                <p>{0.008 * parseFloat(text.split(" ").filter((ele)=>{return ele.length!==0}).length)} Minutes to read.</p>
+                <p>You have {text.split(/\s/).filter((ele)=>{return ele.length!==0}).length} words and {text.length} characters.</p>
+                <p>{0.008 * parseFloat(text.split(/\s/).filter((ele)=>{return ele.length!==0}).length)} Minutes to read.</p>
                 <p>
                     <button className="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
                         View Text
